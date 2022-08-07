@@ -64,7 +64,9 @@ def getDownloadFile(v):
     _downloadlink.feed(page.content.decode("utf-8"))
     return "https://downloads.{domain}/releases/{version}/targets/x86/64/openwrt-{version}-x86-64-{file}".format(domain=domain, version=v, file=_link)
 
-def Downloader():
+def Downloader(efi):
+    global _efi
+    _efi = efi
     _version = getVersion()
     _url = getDownloadFile(_version)
     print("Downloading Version:", _version)
@@ -76,4 +78,4 @@ def Downloader():
         print("File {} is Saved!".format(_fname))
 
 
-Downloader()
+Downloader(False)
