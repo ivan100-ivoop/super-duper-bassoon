@@ -78,11 +78,11 @@ def Downloader(efi):
         print("File {} is Saved!".format(_fname))
 
 def IsEfi():
-    info = input("EFI File? (YES or NO)")
+    info = input("EFI File? (YES or NO): ")
     if info.lower() == "yes":
         Downloader(True)
     else:
         Downloader(False)
        
 if __name__ == "__main__":
-        isEfi()
+        IsEfi()
